@@ -1,5 +1,5 @@
 # This is a starting point for a script to shift frame range numbering
-# Ex: My output files start at frame 50 when they should be named to start at from 1
+# Ex: My output files start at frame 50 when they should be named to start at frame 1
 
 # Note: This hasn't been debugged. The Regex will work though.
 #    THERE'S NO GUARANTEE THIS WILL WORK! TEST AND DEBUG!
