@@ -31,6 +31,7 @@ filename = "sample file of goodness 0009.tga"
 # Note: 
 #   The first capture group only works because of the '$'
 #   Without it, it would fail.
+#   Also, this will only grab the last number sequence in the filename
 m = re.search("(.*?)([0-9]*)([^0-9]*)$", filename)
 filename = m.group(0)
 startnum = m.group(1)
