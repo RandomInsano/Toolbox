@@ -6,6 +6,11 @@
 #    This algorithm assumes no item in the range is missing
 #      Ex: In a range from frame 50 to 100, frame 75 can't be missing
 
+# To fix it for missing frame ranges, you would just take the value of the last
+# frame in the list, then run the for loop from startnum to that end number,
+# skipping non-existant files, and solving for newnum based on the offset from
+# the first number to the number 1
+
 import re
 
 # What's missing:
@@ -25,7 +30,7 @@ filename = "sample file of goodness 0009.tga"
 # Last group:   everything that isn't a number, to the end
 # Note: 
 #   The first capture group only works because of the '$'
-#   Without it, it would faile.
+#   Without it, it would fail.
 m = re.search("(.*?)([0-9]*)([^0-9]*)$", filename)
 filename = m.group(0)
 startnum = m.group(1)
