@@ -30,12 +30,12 @@ filename = "sample file of goodness 0009.tga"
 # Last group:   everything that isn't a number, to the end
 # Note: 
 #   The first capture group only works because of the '$'
-#   Without it, it would fail.
-#   Also, this will only grab the last number sequence in the filename
+#   Without it, we would grab the first number, and text before the next number.
+#   Because of the ? and $, we grab only the last number and the text that comes after it
 m = re.search("(.*?)([0-9]*)([^0-9]*)$", filename)
 filename = m.group(0)
 startnum = m.group(1)
-fileext  = m.group(3)
+fileext  = m.group(2)
 
 filecount = 0 # The number of files we'll be renaming
 
