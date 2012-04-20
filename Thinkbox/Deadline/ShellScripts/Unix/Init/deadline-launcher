@@ -26,9 +26,10 @@ start(){
 			echo "Starting $APP_NAME on `date`" >> $LOGFILE
 		
 			# Run the app, logging all of its output to the specified file
-			su -l $USER -s $APP_PATH -nogui >> $LOGFILE 2>&1 < /dev/null & 
+			su -l $USER -c "nohup $APP_PATH -nogui" >> $LOGFILE 2>&1 < /dev/null & 
 			echo $! > $PIDFILE # Keep track of the PID we're using
-			success "$APP_NAME Started"
+			echo "$APP_NAME Started"
+			exit 0
 		else
 			echo "Could not find $APP_NAME"
 			exit 2
@@ -42,8 +43,10 @@ stop(){
 	if [ -n "$pid" ]; then
 		kill -QUIT $pid
 		rm $PIDFILE
-		success "$APP_NAME Stopped. Note that the slave may still be running."
+		echo "$APP_NAME Stopped.
+		echo "Note that the slave may still be running."
 		echo "Stopped $APP_NAME on `date`" >> $LOGFILE
+		exit 0
 	else
 		echo "$APP_NAME is not running"
 		exit 3
@@ -66,3 +69,4 @@ case "$1" in
 		echo "Usage: $0 {start|stop|restart}"
 		exit 1
 esac
+
