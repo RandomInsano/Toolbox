@@ -1,0 +1,13 @@
+Commands:
+
+svcadm enable svc:/system/stmf:default
+
+stmfadm list-state
+stmfadm list-lu -v
+stmfadm create-lu -s 20g -p blk=4096 -p wcd=true /dev/zvol/rdsk/tank/iscsi/[machine]
+stmfadm add-view 600144f00800271b51c04b7a6dc70001
+
+sbdadm list-lu
+
+itadm create-target
+itadm list-target
