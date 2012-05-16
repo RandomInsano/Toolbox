@@ -69,7 +69,7 @@ then
 	echo "#=== Deadline Repository Share ==="						>> $SMB_PATH
 	echo "# Note that this share will not show up in the OSX UI"	>> $SMB_PATH
 	echo "[Repository]"												>> $SMB_PATH
-	echo "	path=$DEADLINE_PATH >> /etc/smb.conf"					>> $SMB_PATH
+	echo "	path=$DEADLINE_PATH"					>> $SMB_PATH
 	echo "	comment=Test Repository configuration"					>> $SMB_PATH
 	echo "	writeable=yes"											>> $SMB_PATH
 else
