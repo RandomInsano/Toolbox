@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# This is a simple build script I use to get Mono 2.10.2 onto CentOS.
+# It'll install to /opt/mono so that it's modular and off to the side
+# making it easy to delete or uninstall
+
+
 # Pre-flight stuff
 yum install automake libtool autoconf gcc-c++ bison gettext make # Mono deps
 yum install glib2-devel libpng-devel libX11-devel fontconfig-devel freetype-devel #libgdiplus deps
