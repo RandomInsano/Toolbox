@@ -4,18 +4,22 @@
 yum install automake libtool autoconf gcc-c++ bison gettext make # Mono deps
 yum install glib2-devel libpng-devel libX11-devel fontconfig-devel freetype-devel #libgdiplus deps
 
+# Download and extract mono
 curl -L http://ftp.novell.com/pub/mono/sources/mono/mono-2.10.2.tar.bz2 | tar jx
 cd mono*
 
+# Build it
 ./autogen.sh --prefix=/opt/mono
 make all
 make install
 
 cd ..
 
+# Download and extract libgdi plus
 curl -L http://ftp.novell.com/pub/mono/sources/libgdiplus/libgdiplus-2.10.tar.bz2 | tar jx
 cd libgdi*
 
+# Build that too
 ./configure --prefix=/opt/mono
 make all
 make install
