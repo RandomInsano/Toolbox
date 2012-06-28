@@ -43,7 +43,7 @@ stop(){
 	if [ -n "$pid" ]; then
 		kill -QUIT $pid
 		rm $PIDFILE
-		echo "$APP_NAME Stopped.
+		echo "$APP_NAME Stopped."
 		echo "Note that the slave may still be running."
 		echo "Stopped $APP_NAME on `date`" >> $LOGFILE
 		exit 0
