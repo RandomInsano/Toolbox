@@ -36,4 +36,4 @@ echo 'export PATH=/opt/mono/bin:$PATH' > /etc/profile.d/deadline-path.sh
 echo "/opt/mono/lib" > /etc/ld.so.conf.d/deadline-mono.conf
 ldconfig
 
-echo "Now you'll need to reboot for the PATH changes to take effect"
+echo "Now you'll need to log out and back in for the PATH changes to take effect"
