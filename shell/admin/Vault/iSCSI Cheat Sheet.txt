@@ -1,4 +1,5 @@
-Commands:
+Commands (General SCSI):
+===========================
 
 svcadm enable svc:/system/stmf:default
 
@@ -9,5 +10,15 @@ stmfadm add-view 600144f00800271b51c04b7a6dc70001
 
 sbdadm list-lu
 
+iSCSI related:
+===========================
 itadm create-target
 itadm list-target
+
+
+FC Related:
+==========================
+fcinfo hba-port
+
+And handy page:
+   http://blog.allanglesit.com/2011/08/adventures-in-zfs-configuring-fibre-channel-targets/
