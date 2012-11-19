@@ -1,7 +1,17 @@
 #!/bin/bash
 
 # Autostart applications on *nix hosts using the init daemon.
-# This is as generic as possible. 
+
+### BEGIN INIT INFO
+# Provides: deadline-pulse
+# Required-Start: $network $syslog $sudo
+# Required-Stop: $network $syslog $sudo
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start Deadline's Launcher application at boot time
+# Description: Autostart applications on *nix hosts using the init daemon.
+### END INIT INFO
+
 
 INSTALL_DIR="/usr/local/Thinkbox/Deadline/"
 LOGFILE="/var/log/deadline-launcher.log"
