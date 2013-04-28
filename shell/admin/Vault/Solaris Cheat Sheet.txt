@@ -1,0 +1,2 @@
+# List hard drives including make, serial numbers, firmware, device name:
+cfgadm -alv | grep dsk
